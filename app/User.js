@@ -11,6 +11,9 @@ class User {
         this.showResults();
         this.renderCurrentQuestion();
         this.startTimer(30);
+
+        const timerElement = document.getElementById('timer');
+        timerElement.textContent = '';
     }
 
     // renderCurrentQuestion() {
