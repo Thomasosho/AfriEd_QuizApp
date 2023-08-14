@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.quizbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.resolution {
+    margin-top: 20px;
+}
+
+.button {
+    margin-top: 15px !important;
+    height: 30px !important;
+}
+
+form {
+    text-align: center !important;
+}
+
+#results {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the restart button */
+  #restartButton {
+    display: none; /* Hide the restart button by default */
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  #restartButton:hover {
+    background-color: #2980b9;
+  }

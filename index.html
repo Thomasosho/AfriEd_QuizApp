@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <h1 class="row">
+        Today's Quiz
+    </h1>
+    <p class="row">
+        Brought to you by AfriEd in conjunction with Startreck
+    </p>
+    <div class="quizbox">
+        <div class="question" id="question"></div>
+        <div class="resolution" id="results"></div>
+        <!-- <div class="resolution" id="show"></div> -->
+    </div>
+
+    <!-- Load the User.js file -->
+    <script type="module">
+        import User from './app/User.js';
     
+        const user = new User();
+    </script>
 </body>
 </html>
