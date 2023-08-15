@@ -44,7 +44,9 @@ class User {
             questionElement.textContent = currentQuestion.question;
 
             for (const option in currentQuestion.options) {
+                // const optionButton = document.createElement('button');
                 const optionButton = document.createElement('button');
+                optionButton.className = 'option-button';
                 optionButton.textContent = currentQuestion.options[option];
                 optionButton.setAttribute('data-answer', option);
                 optionButton.addEventListener('click', this.handleOptionClick.bind(this));
@@ -74,6 +76,8 @@ class User {
     
             if (selectedAnswer === correctAnswer) {
                 this.score += 20;
+                this.showResults()
+                console.log(this.score);
                 this.showPopup(true);
             } else {
                 this.showPopup(false);
