@@ -151,6 +151,7 @@ class User {
             restartButton.textContent = 'Restart Quiz';
             restartButton.addEventListener('click', this.restartQuiz.bind(this));
             resultsElement.appendChild(restartButton);
+            this.timer = null;
             clearInterval(this.timer);
         }
     }
