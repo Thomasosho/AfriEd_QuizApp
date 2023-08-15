@@ -7,6 +7,60 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+}
+
+
+#question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+#options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.option-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Style for the selected option */
+.option-button.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style for the timer */
+#timer {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Style for the results */
+#results {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .quizbox {
@@ -51,3 +105,48 @@ form {
   #restartButton:hover {
     background-color: #2980b9;
   }
+
+  /* added */
+  .option-button {
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.option-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.popup-correct {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.popup-incorrect {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #f44336;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
