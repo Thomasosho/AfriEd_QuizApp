@@ -80,6 +80,7 @@ class User {
                 console.log(this.score);
                 this.showPopup(true);
             } else {
+                this.showResults()
                 this.showPopup(false);
             }
     
@@ -141,14 +142,17 @@ class User {
 
     showResults() {
         const resultsElement = document.getElementById('results');
-        resultsElement.innerHTML = `YOUR SCORE: ${this.score}`;
-    
-        // if (this.quizCompleted) {
-        //     const restartButton = document.createElement('button');
-        //     restartButton.textContent = 'Restart Quiz';
-        //     restartButton.addEventListener('click', this.restartQuiz.bind(this));
-        //     resultsElement.appendChild(restartButton);
-        // }
+        resultsElement.innerHTML = `<p>YOUR SCORE: ${this.score}</p>`;
+        
+        // console.log(this.currentQuestionIndex, this.quizInstance.questions.length);
+
+        if (this.currentQuestionIndex >= (this.quizInstance.questions.length - 1)) {
+            const restartButton = document.createElement('button');
+            restartButton.textContent = 'Restart Quiz';
+            restartButton.addEventListener('click', this.restartQuiz.bind(this));
+            resultsElement.appendChild(restartButton);
+            clearInterval(this.timer);
+        }
     }
 
     showPopup(isCorrect) {
