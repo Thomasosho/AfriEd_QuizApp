@@ -67,21 +67,21 @@ class User {
         options.forEach(option => {
             option.disabled = true;
         });
-
+    
         if (this.currentQuestionIndex < this.quizInstance.questions.length) {
             const currentQuestion = this.quizInstance.questions[this.currentQuestionIndex];
             const correctAnswer = currentQuestion.correct;
-
+    
             if (selectedAnswer === correctAnswer) {
                 this.score += 20;
                 this.showPopup(true);
             } else {
                 this.showPopup(false);
             }
-
+    
             this.userAnswers[this.currentQuestionIndex] = selectedAnswer;
             this.currentQuestionIndex++;
-
+    
             setTimeout(() => {
                 this.renderCurrentQuestion();
                 if (!this.quizCompleted) {
@@ -93,9 +93,43 @@ class User {
         } else {
             this.quizCompleted = true;
             this.showResults();
-            this.showRestart();
         }
-    }
+    }    
+
+    // submitAnswer(selectedAnswer) {
+    //     const options = document.querySelectorAll('.option-button');
+    //     options.forEach(option => {
+    //         option.disabled = true;
+    //     });
+
+    //     if (this.currentQuestionIndex < this.quizInstance.questions.length) {
+    //         const currentQuestion = this.quizInstance.questions[this.currentQuestionIndex];
+    //         const correctAnswer = currentQuestion.correct;
+
+    //         if (selectedAnswer === correctAnswer) {
+    //             this.score += 20;
+    //             this.showPopup(true);
+    //         } else {
+    //             this.showPopup(false);
+    //         }
+
+    //         this.userAnswers[this.currentQuestionIndex] = selectedAnswer;
+    //         this.currentQuestionIndex++;
+
+    //         setTimeout(() => {
+    //             this.renderCurrentQuestion();
+    //             if (!this.quizCompleted) {
+    //                 options.forEach(option => {
+    //                     option.disabled = false;
+    //                 });
+    //             }
+    //         }, 2000);
+    //     } else {
+    //         this.quizCompleted = true;
+    //         this.showResults();
+    //         this.showRestart();
+    //     }
+    // }
 
     handleTimerCompletion() {
         this.submitAnswer(null);
@@ -103,7 +137,14 @@ class User {
 
     showResults() {
         const resultsElement = document.getElementById('results');
-        resultsElement.textContent = `YOUR SCORE: ${this.score}`;
+        resultsElement.innerHTML = `YOUR SCORE: ${this.score}`;
+    
+        // if (this.quizCompleted) {
+        //     const restartButton = document.createElement('button');
+        //     restartButton.textContent = 'Restart Quiz';
+        //     restartButton.addEventListener('click', this.restartQuiz.bind(this));
+        //     resultsElement.appendChild(restartButton);
+        // }
     }
 
     showPopup(isCorrect) {
